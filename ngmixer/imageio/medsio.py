@@ -62,6 +62,7 @@ class MEDSImageIO(ImageIO):
         self.conf['max_cutouts'] = self.conf.get('max_cutouts',None)
 
         pconf=self.conf['imageio']['psfs']
+        #Load the psf blacklist - this just loads an empty dict for the base class
         self._load_psf_blacklist()
 
         # indexing of fofs
@@ -74,6 +75,9 @@ class MEDSImageIO(ImageIO):
         # make sure if we are doing nbrs we have the info we need
         if self.conf['model_nbrs']:
             assert 'nbrs' in self.extra_data,"You must supply a nbrs file to model nbrs!"
+
+    def _load_psf_blacklist():
+        self.psf_blacklist = {}
 
     def _set_defaults(self):
         self.conf['min_weight'] = self.conf.get('min_weight',-numpy.inf)

@@ -4,6 +4,7 @@ import os
 import ngmix
 import fitsio
 import numpy
+from six import iteritems
 
 def set_priors(conf):
     """

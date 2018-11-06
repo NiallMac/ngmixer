@@ -16,6 +16,8 @@ from .defaults import NO_ATTEMPT,NO_CUTOUTS,BOX_SIZE_TOO_BIG,IMAGE_FLAGS,BAD_OBJ
 
 from .util import UtterFailure, seed_numpy
 
+import six
+from six.moves import xrange, cPickle
 
 class NGMixer(dict):
     def __init__(self,
@@ -554,7 +556,6 @@ class NGMixer(dict):
         See if checkpoint data was sent
         """
         import fitsio
-        import cPickle
 
         self.checkpoint_data = None
 

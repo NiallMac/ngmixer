@@ -22,6 +22,8 @@ from ngmix.jacobian import Jacobian
 
 from pprint import pprint
 
+from six.moves import xrange
+
 def get_bootstrapper(obs, type='boot', **keys):
     from ngmix.bootstrap import Bootstrapper
     from ngmix.bootstrap import CompositeBootstrapper
