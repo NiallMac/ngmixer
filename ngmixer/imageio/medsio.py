@@ -76,7 +76,7 @@ class MEDSImageIO(ImageIO):
         if self.conf['model_nbrs']:
             assert 'nbrs' in self.extra_data,"You must supply a nbrs file to model nbrs!"
 
-    def _load_psf_blacklist():
+    def _load_psf_blacklist(self):
         self.psf_blacklist = {}
 
     def _set_defaults(self):
